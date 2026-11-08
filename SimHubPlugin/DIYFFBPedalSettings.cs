@@ -19,6 +19,7 @@ namespace DiyFfbPedal
         public uint[] connect_flag = new uint[3] { 0, 0, 0 };
         public uint RPM_effect_type = 0;
         public uint table_selected = 0;
+        public int main_tab_selected = 0;
         public int[] auto_connect_flag = new int[3] { 0, 0, 0 };
         public int[] selectedComPortNamesInt = new int[3] { -1, -1, -1 };
         public int[] ABS_enable_flag = new int[3] { 0, 0, 0 };

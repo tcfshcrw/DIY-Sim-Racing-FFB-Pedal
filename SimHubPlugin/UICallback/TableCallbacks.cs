@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,8 +57,13 @@ namespace DiyFfbPedal
 
         private void Function_Tab_seleciton_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.Source is TabControl)
+            if (e.Source is TabControl && ReferenceEquals(e.Source, Function_Tab_seleciton))
             {
+                if (Plugin?.Settings != null && Function_Tab_seleciton.SelectedIndex >= 0)
+                {
+                    Plugin.Settings.main_tab_selected = Function_Tab_seleciton.SelectedIndex;
+                }
+
                 bool isLivePlot = Tab_LivePlot != null && Tab_LivePlot.IsSelected;
                 bool isPoppedOut = _livePlotWindow != null && _livePlotWindow.IsLoaded;
                 if (!isPoppedOut)

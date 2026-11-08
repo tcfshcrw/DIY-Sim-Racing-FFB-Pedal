@@ -340,6 +340,15 @@ namespace DiyFfbPedal
             System.Threading.Thread.Sleep(50);
             Plugin.BridgeHidService.OnDataReceived += HidRecieveCallback;
             updateTheGuiFromConfig();
+
+            if (plugin?.Settings != null && Function_Tab_seleciton != null)
+            {
+                int tabIdx = plugin.Settings.main_tab_selected;
+                if (tabIdx >= 0 && tabIdx < Function_Tab_seleciton.Items.Count)
+                {
+                    Function_Tab_seleciton.SelectedIndex = tabIdx;
+                }
+            }
         }
 
         public bool IsHomePedalConnected(int pedal)
